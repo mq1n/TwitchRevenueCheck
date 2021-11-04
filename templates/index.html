@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html>
+    <head>
+        <title>Twitch revenue checker</title>
+    </head>
+    
+    <body>
+        <h2>Search streamer</h2>
+
+        <form action = "/" method="post">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name"></td>
+                    <td><input type="submit" name="search" value="Search">
+                </tr>
+            </table>
+        </form>
+
+        </br>
+
+        <table border=5 width="100%" height="100%">
+			<thead>
+				<td>ID</td>
+				<td>Name</td>
+				<td>Month</td>
+				<td>Year</td>
+				<td>Ad revenue</td>
+				<td>Sub revenue</td>
+				<td>Bit revenue</td>
+				<td>Prime sub revenue</td>
+				<td>Total gross</td>
+			</thead>
+			{% for row in rows %}
+			<tr>
+				<td>{{row[0]}}</td>
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td>{{row[4]}}</td>
+				<td>{{row[5]}}</td>
+				<td>{{row[6]}}</td>
+				<td>{{row[9]}}</td>
+				<td>{{row[13]}}</td>
+			</tr>
+			{% endfor %}
+            <tfoot>
+                <tr>
+                    <th scope="row">Total</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{total[0]}}</td>
+                    <td>{{total[1]}}</td>
+                    <td>{{total[2]}}</td>
+                    <td>{{total[3]}}</td>
+                    <td>{{total[4]}}</td>
+                </tr>
+            </tfoot>
+		</table>
+
+        <h3><a href = "\">homepage</a></h3>
+    </body>
+</html>
